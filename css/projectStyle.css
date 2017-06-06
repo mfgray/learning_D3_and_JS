@@ -1,0 +1,174 @@
+h3 {
+  color: black;
+  text-align: center;
+  margin-bottom: 2em;
+}
+p.subtitle {
+  color: black;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+button:focus {
+  outline:0;
+}
+
+button:focus .dropbtnLabel {
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-color: blue;
+}
+
+.spUnderline {
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-color: blue;
+}
+
+.intro {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+p.intro {
+  margin-bottom: 1em;
+}
+
+.startHidden {
+  visibility: hidden;
+}
+
+.axis_tick_label {
+  font-family: arial;
+  font-size: 0.6em;
+  color: #999999;
+  fill: #999999;
+}
+
+.labels {
+  font-size:1.2em;
+  fill: gray;
+}
+
+.side_labels {
+  font-size:1.2em;
+  fill: gray;
+}
+
+path {
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.tick {
+  fill: none;
+  stroke: #555555;
+}
+
+circle.scatterData {
+  opacity: 0.3;
+  stroke: none;
+}
+
+rect {
+  opacity: 0.7;
+  stroke-width: 2
+}
+
+svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.menu {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.menu_label {
+  margin: 0;
+}
+
+.click_pane:hover {
+  stroke-width: 2;
+  stroke: gray;
+}
+/* Dropdown Button formatting adapted from https://www.w3schools.com/howto/howto_css_dropdown.asp*/
+.dropbtn {
+  background-color: #ffffff;
+  color: gray;
+  font-size: 0.8em;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.dropbtnLabel {
+  margin: 0px 0px;
+  padding: 7px 5px;
+  text-align: center;
+}
+
+.dropbtnLabel:hover {
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-color: blue;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+p.dropOptions {
+  color: black;
+  text-align: center;
+  margin: 0;
+  padding: 10px 5px;
+}
+.dropdown-content p:hover {background-color: #bbbbbb}
+
+.data-dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 250px;
+  padding: 5px 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dataSource:hover .data-dropdown {
+ display: block;
+ top: -5em;
+ left: 470px;
+ font-size: 0.7em;
+}
+
+
+.show {display:block;}
+/* end of adapted dropdown css*/
+
+.unit_button:hover .button_border {
+stroke-width: 1.5;
+stroke: black;
+}
+
+
+svg text{
+  cursor:default;
+  /*from https://css-tricks.com/almanac/properties/u/user-select/*/
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+
+    <link rel="stylesheet", type="text/css", href="css/projectStyle1.css">
+    <script src="js/draw1.js"></script>
+
+
+
+  </head>
+<body>
+  <div id='spMainBlock'></div>
+
+
+  <script type="text/javascript">
+
+//load data and then call draw function
+  queue()
+	.defer(d3.csv, 'data/mensDataCols.csv')
+  .defer(d3.csv, 'data/womensDataCols.csv')
+  .defer(d3.json, 'data/sizeChartsFit.json')
+	.await(draw);
+
+  </script>
+</body>
+</html>
