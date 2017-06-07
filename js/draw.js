@@ -293,12 +293,14 @@
     .classed('startHidden', true);
   var svgBtnShift = 1
 
+  //div to contain the start button
   var startMenu = svg.append('g')
     .attr('class','unit_buttons')
     .attr('transform',
         'translate('+  ( svgWidth/2) + ',' +
          (svgHeight/5) +')');
 
+  // This function draws the graphs that are shown on page load
   startScreen(startMenu);
 
 
