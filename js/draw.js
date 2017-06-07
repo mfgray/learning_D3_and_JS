@@ -299,10 +299,11 @@
     .attr('transform',
         'translate('+  ( svgWidth/2) + ',' +
          (svgHeight/5) +')');
-
-  // This function draws the graphs that are shown on page load
+  //create start button
   startScreen(startMenu);
 
+  // This function draws the graphs that are shown on page load
+  initialGraph();
 
   //dividing line
   svg.append('line')
@@ -429,9 +430,9 @@ var explanation = ['Method details',
   function cumulSum(anArr) {
     var resultArr = anArr.reduce(function(total, timeStep, i ){
       if (total.length > 0 ) {total.push(total[i-1] + timeStep*1000);} else {total.push(timeStep*1000);};
-    return total;
-  },[])
-return resultArr;}
+      return total;
+    },[])
+  return resultArr;}
 
   function introAnimation(){
     var introTiming = cumulSum([9,8,7,4]);
@@ -458,46 +459,46 @@ return resultArr;}
 
   function startScreen(parentElem){
 
-  svg.append('text')
-  .attr('id','narrativeText')
-  .attr('x', svgWidth/2)
-  .attr('y', 0)
-  .attr('dy','1.5em')
-  .attr('text-anchor','middle')
-  .text("What do small, medium and large mean?")
+    svg.append('text')
+    .attr('id','narrativeText')
+    .attr('x', svgWidth/2)
+    .attr('y', 0)
+    .attr('dy','1.5em')
+    .attr('text-anchor','middle')
+    .text("What do small, medium and large mean?")
 
-  svg.append('text')
-  .attr('id','narrativeText2')
-  .attr('x', svgWidth/2)
-  .attr('y', 0)
-  .attr('dy','3.5em')
-  .attr('text-anchor','middle')
-  .text("Can't size charts be more visual?")
-
-
-
-  var startButton = svgButton(parentElem, 'startButton',
-                            'Start', [-1.3 + svgBtnShift,-2], 3.3);
-
-  startButton.on('click', function(){
-    introAnimation();
-    startMenu.remove()
-
-  }).attr('visibility','visible');
+    svg.append('text')
+    .attr('id','narrativeText2')
+    .attr('x', svgWidth/2)
+    .attr('y', 0)
+    .attr('dy','3.5em')
+    .attr('text-anchor','middle')
+    .text("Can't size charts be more visual?")
 
 
-  var skipButton = svgButton(parentElem, 'skipBttn',
-                            'Skip Intro', [-1.3 + svgBtnShift,0], 5);
 
-  skipButton.on('click', function(){
-    skipInro();
-    startMenu.remove()
+    var startButton = svgButton(parentElem, 'startButton',
+                              'Start', [-1.3 + svgBtnShift,-2], 3.3);
 
-  }).attr('visibility','visible');
+    startButton.on('click', function(){
+      introAnimation();
+      startMenu.remove()
 
-}
+      }).attr('visibility','visible');
 
-    initialGraph();
+
+    var skipButton = svgButton(parentElem, 'skipBttn',
+                              'Skip Intro', [-1.3 + svgBtnShift,0], 5);
+
+    skipButton.on('click', function(){
+      skipInro();
+      startMenu.remove()
+
+    }).attr('visibility','visible');
+
+  }
+
+
   function initialGraph() {
 
 
